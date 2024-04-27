@@ -5,6 +5,7 @@
 2. Run the Aggregator.py file to generate a cumulative csv of statistics
 3. Run DecisionTree.py to train a tree
 
+TODO: add a controller file that does this all in one execution
 
 # Project Description
 
