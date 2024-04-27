@@ -31,12 +31,10 @@ def calculate_protocol_percentages(filtered):
     return TCP_percentage, TLS_percentage, UDP_percentage
 
 def calculate_average_bytes_per_second(filtered):
-    # Bytes per second
     average_bytes_per_second = filtered['Length'].sum() / filtered['Time'].max()
     return average_bytes_per_second
 
 def calculate_average_packets_per_second(filtered):
-    # Packets per Second
     average_packets_per_second = len(filtered) / filtered['Time'].max()
     return average_packets_per_second
 
@@ -87,13 +85,8 @@ def generate_statistics_dictionary(filtered, website):
     
     return statistics_dict
 
-def main():
-    file_path = "./data/Weather.csv"
+def main(file_path, website):
     filtered = read_and_filter_data(file_path)
-    statistics_dict = generate_statistics_dictionary(filtered, 'Weather.com')
+    statistics_dict = generate_statistics_dictionary(filtered, website)
     statistics_df = pd.DataFrame(statistics_dict, index=[0])
-    print(statistics_df)
-
-if __name__ == "__main__":
-    main()
-
+    return statistics_df
