@@ -1,5 +1,12 @@
-# NetworkTrafficAnalyzer
-# CSCI434/534 COLL 400 Capstone Project Report
+# CSCI434 Capstone Project: Network Traffic Analyzer
+
+# Usage 
+1. Add your data to the data file
+2. Run the Aggregator.py file to generate a cumulative csv of statistics
+3. Run DecisionTree.py to train a tree
+
+
+# Project Description
 
 ## Overview
 The COLL 400 capstone project involves monitoring and analyzing computer network traffic, specifically from popular internet websites like Amazon, Netflix, and Bank of America. Students will apply AI/ML, statistical, and mathematical knowledge to extract features from website traffic data and build models for automatic classification of the website of origin.
