@@ -14,6 +14,7 @@ def calculate_protocol_percentages(filtered):
     TCP_percentage = 0
     TLS_percentage = 0
     UDP_percentage = 0
+    QUIC_percentage = 0
 
     # Extract percentages for TCP, TLS, and UDP protocols if available
     try:
@@ -28,7 +29,11 @@ def calculate_protocol_percentages(filtered):
         UDP_percentage = protocol_percentages['UDP']
     except KeyError:
         pass
-    return TCP_percentage, TLS_percentage, UDP_percentage
+    try:
+        QUIC_percentage = protocol_percentages['QUIC']
+    except KeyError:
+        pass
+    return TCP_percentage, TLS_percentage, UDP_percentage, QUIC_percentage
 
 def calculate_average_bytes_per_second(filtered):
     average_bytes_per_second = filtered['Length'].sum() / filtered['Time'].max()
@@ -57,7 +62,7 @@ def calculate_packet_timing_statistics(filtered):
 
 def generate_statistics_dictionary(filtered, website):
     # Calculate protocol percentages
-    TCP_percentage, TLS_percentage, UDP_percentage = calculate_protocol_percentages(filtered)
+    TCP_percentage, TLS_percentage, UDP_percentage, QUIC_percentage = calculate_protocol_percentages(filtered)
     # Calculate average bytes per second
     average_bytes_per_second = calculate_average_bytes_per_second(filtered)
     # Calculate average packets per second
@@ -80,6 +85,7 @@ def generate_statistics_dictionary(filtered, website):
         'TCP_percentage': TCP_percentage,
         'TLS_percentage': TLS_percentage,
         'UDP_percentage': UDP_percentage,
+        'QUIC_percentage':QUIC_percentage,
         'Website': website
     }
     
