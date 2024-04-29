@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 import re
-from Preprocessor import main as preprocess_main 
+from .Preprocessor import main as preprocess_main 
 
 def preprocess_files_in_directory(directory_path):
     # List to store dataframes
@@ -27,12 +27,7 @@ def save_statistics_to_csv(directory_path, output_file):
     statistics_df = preprocess_files_in_directory(directory_path)
     statistics_df.to_csv(output_file, index=False)
     print("Output saved to:", output_file)
+    print('\n')
 
-def main():
-    # Provide the directory of csv's and output path
-    directory_path = "./Data"
-    output_file = "statistics_output.csv"
-    save_statistics_to_csv(directory_path, output_file)
-
-if __name__ == "__main__":
-    main()
+def main(directory_path = "./Data", output_filename = "statistics_output.csv"):
+    save_statistics_to_csv(directory_path, output_filename)
