@@ -1,54 +1,76 @@
-# CSCI434 Capstone Project: Network Traffic Analyzer
+# Network Traffic Analyzer with Machine Learning
 
-# Usage 
-1. Add your data to the data file
-2. Run the Aggregator.py file to generate a cumulative csv of statistics
-3. Run DecisionTree.py to train a tree
+This project analyzes and predicts network traffic using various machine learning algorithms. It includes modules for data aggregation, preprocessing, and building predictive models.
 
-TODO: add a controller file that does this all in one execution
+## Features
 
-# Project Description
+- Assemble and preprocess network traffic data
+- Build decision tree models
+- Perform logistic regression analysis
+- Create support vector machine (SVM) classifiers
+- Visualize decision boundaries using PCA
 
-## Overview
-The COLL 400 capstone project involves monitoring and analyzing computer network traffic, specifically from popular internet websites like Amazon, Netflix, and Bank of America. Students will apply AI/ML, statistical, and mathematical knowledge to extract features from website traffic data and build models for automatic classification of the website of origin.
+## Example Results
 
-## Goals
-1. Apply AI/ML, statistical, and mathematical knowledge in a real-world scenario.
-2. Enhance teamwork skills through collaborative group work.
-3. Engage with general end-users to obtain feedback on the project's classification capabilities and presentation accessibility.
+<center>
 
-## Requirements
-- Work in teams of three to five.
-- Present projects using PowerPoint slides.
-- Submit a final project report, accounting for 20% of the final grade.
-- Host all code and slides on a GitHub repository.
+### Preprocessed Data
 
-## Project Guidelines
-### Objective
-Develop models to classify web traffic origins without access to URLs or encrypted payloads.
+![Preprocessed Data](Examples/Preprocessed_Data.png)
 
-### Dataset
-- Must include output labels (originating website) and input features extracted from traffic data.
-- Data collection methods: Manual collection via Wireshark or utilization of public datasets.
+An example of the features and preprocessed network traffic data.
 
-### Method
-- Start with classic classification models (e.g., SVM, Decision Trees, CNNs).
-- Modify, combine, or develop new models to improve accuracy and efficiency.
-  
-### Evaluation
-- Split data into training, validation, and testing sets.
-- Establish baseline model for comparison.
-- Compare proposed method against baseline using accuracy and F1-Score.
-- Analyze results to understand strengths and weaknesses.
+### Decision Tree
 
-## Final Presentation
-- Teams present using PowerPoint slides in the final week of the semester.
-- Each team member receives the same grade for the project.
+![Decision Tree](Examples/Decision_Tree.png)
 
----
+A visualization of the decision tree model built from the network traffic data.
 
-**Note:** Detailed guidelines, resources, and examples are provided in the course materials.
+### Logistic Regression (K-Fold Cross-Validation)
 
-[1]: https://en.wikipedia.org/wiki/Accuracy_and_precision
-[2]: https://en.wikipedia.org/wiki/F1_score
-.
+![Logistic Regression (K-Fold Cross-Validation)](Examples/Logistic_Regression_K-Fold.png)
+
+Average training and testing accuracies from logistic regression with 10-Fold cross-validation.
+
+### SVM C Optimization
+
+![SVM C Optimization](Examples/SVM_C_Optimization.png)
+
+Average testing accuracy across different C values for SVM optimization.
+
+### SVM Decision Boundary
+
+![SVM Decision Boundary](Examples/SVM_Decision_Boundary.png)
+
+Decision boundaries plotted after applying PCA to the SVM model to reduce dimensionality to 2.
+
+</center>
+
+## Prerequisites
+
+- Python 3
+- Libraries: pandas, scikit-learn, matplotlib
+
+## Installation
+
+1. Clone this repository
+2. Install the dependencies using pip
+
+## Usage
+
+1. Add your network traffic csv files from wireshark to a folder.
+2. Run the `Controller.py` file using Python.
+3. Follow the prompts to perform various tasks:
+
+   - Type `1` to assemble and preprocess the dataset.
+   - Type `2` to build a decision tree model.
+   - Type `3` to perform logistic regression analysis.
+   - Type `4` to create an SVM classifier.
+   - Type any other key to exit the program.
+
+## File Structure
+
+- `Algorithms/`: Contains different machine learning algorithms
+- `Data/`: Directory to store network traffic data files
+- `Controller.py`: Main script to control the workflow
+
