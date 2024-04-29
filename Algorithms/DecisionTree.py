@@ -15,10 +15,9 @@ def main():
     model.fit(X_train, y_train)
 
     print("Accuracy:", model.score(X_test, y_test))
+    print("\n")
 
     #Visualize Tree
     plt.figure(figsize=(20,10))
     plot_tree(model, filled=True, feature_names=X.columns, class_names=model.classes_)
     plt.show()
-    
-main()
