@@ -90,10 +90,9 @@ def main():
     best_C, best_accuracy = find_best_C(C_values, test_accuracies)
     print("Best C value:", best_C)
     print("Corresponding Testing Accuracy:", best_accuracy)
+    print("\n")
 
     # Visualize PCA after selecting the best C value
     visualize_pca(X_scaled, y, best_C)
 
     return X, y, best_C
-
-main()
