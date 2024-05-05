@@ -3,6 +3,7 @@ from Algorithms.DecisionTree import main as decisiontree_main
 from Algorithms.LogisticRegression import main as logisticregression_main
 from Algorithms.SVM import main as svm_main
 from Algorithms.StripPlots import main as stripplot_main
+from Algorithms.EvaluateModels import main as evaluatemodels_main
 
 if __name__ == "__main__":
     while True:
@@ -11,6 +12,7 @@ if __name__ == "__main__":
         print("Type 3 to perform logistic regression")
         print("Type 4 to create a SVM")
         print("Type 5 to generate strip plots")
+        print("Type 6 to evaluate models")
         print("Type anything else to exit")
         
         user_input = input("Enter your choice: ")
@@ -36,6 +38,11 @@ if __name__ == "__main__":
         elif user_input == '5':
             print("Creating strip plots...")
             stripplot_main()
+
+        elif user_input == '6':
+            print("Evaluating models...")
+            evaluatemodels_main()
+
 
         else:
             print("Exiting program...")
