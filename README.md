@@ -66,6 +66,7 @@ Decision boundaries plotted after applying PCA to the SVM model to reduce dimens
    - Type `2` to build a decision tree model.
    - Type `3` to perform logistic regression analysis.
    - Type `4` to create an SVM classifier.
+   - Type `5` to generate strip plots on the features
    - Type any other key to exit the program.
 
 ## File Structure
